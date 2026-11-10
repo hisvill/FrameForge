@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink-950: #0c0c0e;
+  --color-ink-900: #141417;
+  --color-ink-850: #1a1a1e;
+  --color-ink-800: #212126;
+  --color-ink-700: #2c2c33;
+  --color-ink-600: #3a3a43;
+  --color-ink-400: #7b7b88;
+  --color-ink-300: #a3a3ae;
+  --color-ink-100: #ececf1;
+  --color-forge-500: #f97316;
+  --color-forge-400: #fb923c;
+  --color-forge-600: #ea580c;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+input,
+textarea,
+.selectable,
+.prose-chat {
+  user-select: text;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.prose-chat p {
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+.prose-chat ul,
+.prose-chat ol {
+  margin: 0.4rem 0;
+  padding-left: 1.3rem;
+}
+.prose-chat ul {
+  list-style: disc;
+}
+.prose-chat ol {
+  list-style: decimal;
+}
+.prose-chat code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--color-ink-800);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+.prose-chat pre {
+  background: var(--color-ink-900);
+  border: 1px solid var(--color-ink-700);
+  padding: 0.75rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+.prose-chat pre code {
+  background: none;
+  padding: 0;
+}
+.prose-chat a {
+  color: var(--color-forge-400);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.prose-chat h1,
+.prose-chat h2,
+.prose-chat h3 {
+  font-weight: 600;
+  margin: 0.8rem 0 0.3rem;
+}
+.prose-chat table {
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+}
+.prose-chat th,
+.prose-chat td {
+  border: 1px solid var(--color-ink-700);
+  padding: 0.25rem 0.5rem;
+}
+
+.dither {
+  background-image: radial-gradient(rgba(249, 115, 22, 0.18) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+.pulse-dot {
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
